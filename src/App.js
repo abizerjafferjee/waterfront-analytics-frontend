@@ -1,25 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import { useLocation, Switch, Route } from 'react-router-dom';
+import ReactGA from 'react-ga';
+
+import LayoutDefault from './layouts/LayoutDefault';
+import Home from './components/Home';
+
+// Initialize Google Analytics
+ReactGA.initialize(process.env.REACT_APP_GA_CODE);
+
+function trackPage (page) {
+  ReactGA.set({ page });
+  ReactGA.pageview(page);
+};
 
 function App() {
+
+  let location = useLocation();
+
+  useEffect(() => {
+    const page = location.pathname;
+    trackPage(page);
+  }, [location]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Switch>
+          <LayoutDefault>
+              <Route exact path="/">
+                  <Home />
+              </Route>
+          </LayoutDefault>
+      </Switch>
   );
 }
 

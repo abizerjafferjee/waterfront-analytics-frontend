@@ -1,0 +1,27 @@
+.hero-container {
+  height: 700px;
+}
+
+.hero-header {
+  font-weight: Bold;
+  font-size: 66px;
+  color: white;
+}
+
+.hero-text {
+  font-size: 28px;
+  color: white;
+}
+
+@media screen and (max-width: 500px){
+  .hero-header {
+    font-weight: Bold;
+    font-size: 40px;
+    color: white;
+  }
+
+  .hero-text {
+    font-size: 18px;
+    color: white;
+  }
+}
