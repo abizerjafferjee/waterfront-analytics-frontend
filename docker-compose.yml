@@ -1,4 +1,5 @@
-version: '3.7'
+#version: '3.7'
+verion: '3'
 
 services:
   react:
@@ -12,7 +13,7 @@ services:
       - '/app/node_modules'
     ports:
       - 3001:3000
-#    restart: unless-stopped
+    restart: unless-stopped
     environment:
       - CHOKIDAR_USEPOLLING=true
 #      - COMPOSE_CONVERT_WINDOWS_PATHS=1
