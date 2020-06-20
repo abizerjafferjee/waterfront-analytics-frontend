@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/static/css/main.c77ae3a4.chunk.css",
+    "main.js": "/static/js/main.1e495eee.chunk.js",
+    "main.js.map": "/static/js/main.1e495eee.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.cd1be28d.js",
+    "runtime-main.js.map": "/static/js/runtime-main.cd1be28d.js.map",
+    "static/js/2.1d828d70.chunk.js": "/static/js/2.1d828d70.chunk.js",
+    "static/js/2.1d828d70.chunk.js.map": "/static/js/2.1d828d70.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.c3fb07369cc5a7149ecfb07103db9fd6.js": "/precache-manifest.c3fb07369cc5a7149ecfb07103db9fd6.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.c77ae3a4.chunk.css.map": "/static/css/main.c77ae3a4.chunk.css.map",
+    "static/js/2.1d828d70.chunk.js.LICENSE.txt": "/static/js/2.1d828d70.chunk.js.LICENSE.txt",
+    "static/media/abizer.jpg": "/static/media/abizer.01ab4999.jpg",
+    "static/media/data-model.svg": "/static/media/data-model.44be0720.svg",
+    "static/media/data-science.svg": "/static/media/data-science.bb08254e.svg",
+    "static/media/database.svg": "/static/media/database.8029190e.svg",
+    "static/media/event-tracking.svg": "/static/media/event-tracking.ac1714cd.svg",
+    "static/media/kpi-measurements.svg": "/static/media/kpi-measurements.25061a8b.svg",
+    "static/media/octo-analytics-logo-white.png": "/static/media/octo-analytics-logo-white.fcd507fe.png",
+    "static/media/strategy.svg": "/static/media/strategy.4832aea5.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cd1be28d.js",
+    "static/js/2.1d828d70.chunk.js",
+    "static/css/main.c77ae3a4.chunk.css",
+    "static/js/main.1e495eee.chunk.js"
+  ]
+}
