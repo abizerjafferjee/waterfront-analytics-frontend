@@ -18,7 +18,7 @@
 #prod
 FROM node:13.12.0-alpine
 
-RUN mkdir -p /home/deploy/app/node_modules && chown -R deploy /home/deploy/app
+RUN mkdir -p /home/deploy/app/node_modules
 
 WORKDIR /home/deploy/app
 
@@ -30,7 +30,7 @@ USER deploy
 RUN npm install --silent
 RUN npm install react-scripts@3.4.1 -g --silent
 
-COPY --chown=deploy . .
+COPY . .
 
 EXPOSE 3000
 
