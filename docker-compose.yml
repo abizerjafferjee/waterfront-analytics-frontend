@@ -22,7 +22,7 @@ services:
       - app-network
 
   webserver:
-    image: nginx:mainline-apline
+    image: nginx:mainline-alpine
     container_name: webserver
     restart: unless-stopped
     ports:
