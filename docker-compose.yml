@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   webserver:
-    image: nginx:mainline-alpine
+    image: nginx:1.14.2-alpine
     container_name: webserver
     restart: always
     ports:
@@ -12,14 +12,14 @@ services:
       - ./build:/var/www/html
       - ./nginx-conf:/etc/nginx/conf.d
       - ./dhparam:/etc/nginx/dhparam
-      - .certbot/conf:/etc/nginx/ssl
-      - .certbot/data:/usr/share/nginx/html/letsencrypt
+      - ./certbot/conf:/etc/nginx/ssl
+      - ./certbot/data:/usr/share/nginx/html/letsencrypt
 
   certbot:
     image: certbot/certbot
     container_name: certbot
     volumes:
-      - .certbot/conf:/etc/letsencrypt
-      - .certbot/logs:/var/log/letsencrypt
-      - .certbot/data:/usr/share/nginx/html/letsencrypt
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/logs:/var/log/letsencrypt
+      - ./certbot/data:/usr/share/nginx/html/letsencrypt
     command: certonly --webroot --webroot-path=/usr/share/nginx/html/letsencrypt --email abizerjafferjee@gmail.com --agree-tos --no-eff-email -d waterfrontanalytics.com -d www.waterfrontanalytics.com
