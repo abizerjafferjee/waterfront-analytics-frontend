@@ -1,71 +1,25 @@
-#version: '3.7'
-version: '3'
+version: '3.4'
 
 services:
-#  react:
-#    container_name: octo-cntr
-#    image: octo-img
-#    build:
-#      context: .
-#      dockerfile: Dockerfile
-##    volumes:
-##      - '.:/app'
-##      - '/app/node_modules'
-#    ports:
-#      - 3000:3000
-#    environment:
-#      - CHOKIDAR_USEPOLLING=true
-#    #      - COMPOSE_CONVERT_WINDOWS_PATHS=1
-##    tty: true
-#    restart: unless-stopped
-#    networks:
-#      - app-network
-
   webserver:
     image: nginx:mainline-alpine
     container_name: webserver
-    restart: unless-stopped
+    restart: always
     ports:
       - "80:80"
       - "443:443"
     volumes:
-      - web-root:/var/www/html
+      - ./build:/var/www/html
       - ./nginx-conf:/etc/nginx/conf.d
-      - certbot-etc:/etc/letsencrypt
-      - certbot-var:/var/lib/letsencrypt
-      - dhparam:/etc/ssl/certs
-#    depends_on:
-#      - react
-#    networks:
-#      - app-network
+      - ./dhparam:/etc/nginx/dhparam
+      - .certbot/conf:/etc/nginx/ssl
+      - .certbot/data:/usr/share/nginx/html/letsencrypt
 
   certbot:
     image: certbot/certbot
     container_name: certbot
     volumes:
-      - certbot-etc:/etc/letsencrypt
-      - certbot-var:/var/lib/letsencrypt
-      - web-root:/var/www/html
-    depends_on:
-      - webserver
-    command: certonly --webroot --webroot-path=/var/www/html --email abizerjafferjee@gmail.com --agree-tos --no-eff-email --force-renewal -d waterfrontanalytics.com -d www.waterfrontanalytics.com
-
-volumes:
-  certbot-etc:
-  certbot-var:
-  web-root:
-    driver: local
-    driver_opts:
-      type: none
-      device: /home/deploy/octo-analytics/octo-analytics-frontend/build/
-      o: bind
-  dhparam:
-    driver: local
-    driver_opts:
-      type: none
-      device: /home/deploy/octo-analytics/octo-analytics-frontend/dhparam/
-      o: bind
-
-#networks:
-#  app-network:
-#    driver: bridge
+      - .certbot/conf:/etc/letsencrypt
+      - .certbot/logs:/var/log/letsencrypt
+      - .certbot/data:/usr/share/nginx/html/letsencrypt
+    command: certonly --webroot --webroot-path=/usr/share/nginx/html/letsencrypt --email abizerjafferjee@gmail.com --agree-tos --no-eff-email -d waterfrontanalytics.com -d www.waterfrontanalytics.com
