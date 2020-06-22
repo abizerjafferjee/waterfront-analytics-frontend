@@ -34,10 +34,10 @@ services:
       - certbot-etc:/etc/letsencrypt
       - certbot-var:/var/lib/letsencrypt
       - dhparam:/etc/ssl/certs
-    depends_on:
-      - react
-    networks:
-      - app-network
+#    depends_on:
+#      - react
+#    networks:
+#      - app-network
 
   certbot:
     image: certbot/certbot
@@ -66,6 +66,6 @@ volumes:
       device: /home/deploy/octo-analytics/octo-analytics-frontend/dhparam/
       o: bind
 
-networks:
-  app-network:
-    driver: bridge
+#networks:
+#  app-network:
+#    driver: bridge
