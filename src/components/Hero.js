@@ -8,7 +8,7 @@ function Hero() {
                 <div className="section-content">
                     <p className="hero-header">Bootstrap your analytics team.</p>
                     <p className="hero-text">
-                        Octo Analytics is an analytics consultancy serving high-growth startups & ambitious SMEs.
+                        Waterfront Analytics is an analytics consultancy serving high-growth startups & ambitious SMEs.
                         <br></br>We give companies access to top-tier data talent on a fractional basis.
                     </p>
                 </div>

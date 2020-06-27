@@ -119,6 +119,8 @@ function ContactForm({className}) {
                 const vRole = role !== ''
                 setValidRole(vRole)
                 break
+            default:
+                break
         }
     }
 

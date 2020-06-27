@@ -21,7 +21,7 @@ function Footer({className}) {
                 </div>
             </div>
             <div className="footer-copyright text-center py-3 footer-content">
-                    Octo Analytics © 2020 Copyright
+                    Waterfront Analytics © 2020 Copyright
             </div>
         </footer>
     )

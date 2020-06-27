@@ -59,7 +59,7 @@ function ProjectType({nextStep, previousStep, handleChange, value}) {
                     onChange={handleChange}
                 />
                 <label className="form-check-label">
-                    None of the above, just looking to learn about Octo Analytics.
+                    None of the above, just looking to learn about Waterfront Analytics.
                 </label>
             </div>
             <br></br>
