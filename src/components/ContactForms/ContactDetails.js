@@ -2,7 +2,7 @@ import React from "react";
 
 import Input from "../Input";
 
-function ContactDetails({nextStep, previousStep, handleChange, name, validName, email, validEmail, role, validRole,
+function ContactDetails({handleSubmit, nextStep, previousStep, handleChange, name, validName, email, validEmail, role, validRole,
                             company, validCompany}) {
 
     const nameHint = "Name cannot be empty"
@@ -51,9 +51,12 @@ function ContactDetails({nextStep, previousStep, handleChange, name, validName, 
                 hint={validRole === false ? roleHint:null}
             />
 
-            {/*<br></br>*/}
-            <button className="btn btn-primary" onClick={nextStep}>Next</button>
-            {/*<button onClick={previousStep}>Previous</button>*/}
+            {/*&nbsp;*/}
+            {
+                handleSubmit &&
+                <button className="btn btn-primary" onClick={handleSubmit}>Confirm</button>
+            }
+            {/*<button className="btn btn-primary" onClick={nextStep}>Next</button>*/}
         </div>
     )
 }

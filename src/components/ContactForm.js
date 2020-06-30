@@ -54,9 +54,26 @@ function ContactForm({className}) {
 
     function handleSubmit(event) {
         event.preventDefault()
-        console.log('hello submit')
-        setStep(step => (step+1))
-        return null
+
+        fetch('http://68.183.201.67/api/leads/', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: name,
+                email: email,
+                company: company,
+                role: role
+            })
+        })
+        .then(function(response) {
+            setStep(7)
+        })
+        .catch(function(response){
+            return null
+        })
     }
 
     function handleTechnologyDelete(i) {
@@ -167,6 +184,7 @@ function ContactForm({className}) {
                     validEmail={validEmail}
                     validCompany={validCompany}
                     validRole={validRole}
+                    handleSubmit={handleSubmit}
                 />
             )
         case 2:
