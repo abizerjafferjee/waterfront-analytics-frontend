@@ -55,7 +55,7 @@ function ContactForm({className}) {
     function handleSubmit(event) {
         event.preventDefault()
 
-        fetch('http://68.183.201.67/api/leads/', {
+        fetch('https://api.waterfrontanalytics.com/api/leads/', {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
