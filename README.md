@@ -73,3 +73,9 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 2. git add -A && git commit -m "" -> git push origin master
 3. ssh to server (deploy)
 4. git pull origin master
+
+
+# Deployment guides
+1. https://www.youtube.com/watch?v=tgvuQM0qgCE
+2. https://medium.com/@pentacent/nginx-and-lets-encrypt-with-docker-in-less-than-5-minutes-b4b8a60d3a71
+3. https://mherman.org/blog/dockerizing-a-react-app/
