@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { useLocation, Switch, Route } from 'react-router-dom';
+import { useLocation, Switch, Route, BrowserRouter } from 'react-router-dom';
+// import { createBrowserHistory } from 'history'
 import ReactGA from 'react-ga';
 
 import LayoutDefault from './layouts/LayoutDefault';
@@ -24,16 +25,18 @@ function App() {
   }, [location]);
 
   return (
-      <Switch>
-          <LayoutDefault>
-              <Route exact path="/">
-                  <Home />
-              </Route>
-              <Route path="/collections">
-                  <Collections />
-              </Route>
-          </LayoutDefault>
-      </Switch>
+      <BrowserRouter>
+          <Switch>
+              <LayoutDefault>
+                  <Route exact path="/">
+                      <Home />
+                  </Route>
+                  <Route exact path="/collections">
+                      <Collections />
+                  </Route>
+              </LayoutDefault>
+          </Switch>
+      </BrowserRouter>
   );
 }
 
