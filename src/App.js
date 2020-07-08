@@ -4,6 +4,7 @@ import ReactGA from 'react-ga';
 
 import LayoutDefault from './layouts/LayoutDefault';
 import Home from './components/Home';
+import Collections from './components/Collections'
 
 // Initialize Google Analytics
 ReactGA.initialize(process.env.REACT_APP_GA_CODE);
@@ -27,6 +28,9 @@ function App() {
           <LayoutDefault>
               <Route exact path="/">
                   <Home />
+              </Route>
+              <Route path="/collections">
+                  <Collections />
               </Route>
           </LayoutDefault>
       </Switch>
